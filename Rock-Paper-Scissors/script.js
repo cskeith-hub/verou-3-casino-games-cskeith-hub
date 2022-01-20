@@ -2,19 +2,25 @@ const choiceArray = [
     {
         name: 'Rock',
         picture: '<img src="./image/theRock200.jpg" alt="PLayer" width="200" height="200">',
-        value: 1
+        paper: 'lose',
+        scissors: 'win',
+        rock: 'draw'
     },
 
     {
         name: 'paper',
         picture: '<img src="./image/paper.jfif" alt="PLayer" width="200" height="200">',
-        value: 1
+        rock: 'win',
+        scissors: 'lose',
+        paper: 'draw'
     },
 
     {
         name: 'scissors',
         picture: '<img src="./image/scissors200.jpg" alt="PLayer" width="200" height="200">',
-        value: 1
+        rock: 'win',
+        paper: 'lose',
+        scissors: 'draw'
     },
 ]
 
