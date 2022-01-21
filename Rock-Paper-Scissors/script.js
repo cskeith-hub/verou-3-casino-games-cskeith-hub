@@ -1,6 +1,5 @@
 // Create array
-const choiceArray = [
-    {
+const choiceArray = [{
         name: 'Rock',
         picture: '<img src="./image/theRock200.jpg" alt="rock" width="200" height="200">',
     },
@@ -16,33 +15,34 @@ const choiceArray = [
     },
 ]
 
-const play = document.getElementById("play");
+const play = document.querySelector("button");
 const buttonRock = document.getElementById("rock");
 const buttonPaper = document.getElementById("paper");
 const buttonScissors = document.getElementById("scissors");
-const playerChoice = document.getElementById("choice1");
+let playerResult = document.getElementById("choice1");
 let computerResult = document.getElementById("choice2");
 
-play.addEventListener('click', function () {
-    // todo fetch player choice + store variable
-    buttonRock.addEventListener('click', function (rock) {
+play.addEventListener('click', function (startGame) {
+    buttonRock.addEventListener('click', function (playerChoiceRock) {
         event.preventDefault();
-        const playerChoiceRock = choiceArray[0].name;
-        playerChoice.innerHTML = choiceArray[0].picture;
+        const playerRock = choiceArray[0].name;
+        playerResult.innerHTML = choiceArray[0].picture;
         computer();
     })
-    buttonPaper.addEventListener('click', function () {
+    buttonPaper.addEventListener('click', function (playerChoicePaper) {
         event.preventDefault();
-        const playerChoicePaper = choiceArray[1].name;
-        playerChoice.innerHTML = choiceArray[1].picture;
+        const playerPaper = choiceArray[1].name;
+        playerResult.innerHTML = choiceArray[1].picture;
         computer();
     })
-    buttonScissors.addEventListener('click', function () {
+    buttonScissors.addEventListener('click', function (playerChoiceScissors) {
         event.preventDefault();
-        const playerChoiceScissors = choiceArray[2].name;
-        playerChoice.innerHTML = choiceArray[2].picture;
+        const playerScissors = choiceArray[2].name;
+        playerResult.innerHTML = choiceArray[2].picture;
         computer();
     });
+    console.log(buttonRock);
+
     // todo fetch computer choice + store variable
     const computer = () => {
         // todo make an array with options  this is global
@@ -64,11 +64,28 @@ play.addEventListener('click', function () {
                 return
         }
     }
-    // todo comparing variables
-    // todo result
+    // TODO comparing variables
+    // TODO result
 
 
 })
 
-
-
+// // todo fetch player choice + store variable
+// buttonRock.addEventListener('click', function () {
+//     event.preventDefault();
+//     const playerChoiceRock = choiceArray[0].name;
+//     playerChoice.innerHTML = choiceArray[0].picture;
+//     computer();
+// })
+// buttonPaper.addEventListener('click', function () {
+//     event.preventDefault();
+//     const playerChoicePaper = choiceArray[1].name;
+//     playerChoice.innerHTML = choiceArray[1].picture;
+//     computer();
+// })
+// buttonScissors.addEventListener('click', function () {
+//     event.preventDefault();
+//     const playerChoiceScissors = choiceArray[2].name;
+//     playerChoice.innerHTML = choiceArray[2].picture;
+//     computer();
+// });
